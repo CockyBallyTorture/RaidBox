@@ -11,7 +11,7 @@ namespace RaidBoxConsoleGui
 {
     class Program
     {
-
+        //dotnet publish -r win-x64 -c Release /p:PublishSingleFile=true /p:PublishTrimmed=true /p:IncludeNativeLibrariesForSelfExtract=true
         public static string Message;
 
         private static readonly Window window = new(89, 49);
