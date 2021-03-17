@@ -120,7 +120,10 @@ namespace RaidBoxConsoleGui
                             }
                             else if (MessageSendera1[i].Contains("rf_leet"))
                             {
-                                status.WriteLine("[#RF] " + MessageSendera1[i] + " : " + MessageContenta[0]);
+                                //<span class=\"rf_leet\">Mannix</span>"
+                                string[] RfLeet1 = MessageSendera1[1].Split("</span>");
+                                string[] RfLeet2 = RfLeet1[0].Split("\\\u0022rf_leet\\\u0022>");
+                                status.WriteLine("[#RF] " + RfLeet2[1] + " : " + MessageContenta[0]);
                             }
                             else if (MessageSendera1[i].Contains("\\\u0022>rf_i rf_mvp\\\u0022>"))
                             {
@@ -229,7 +232,10 @@ namespace RaidBoxConsoleGui
                         }
                         else if (MessageSendera1[1].Contains("rf_leet"))
                         {
-                            status.WriteLine("[#RF] " + MessageSendera1[1] + " : " + MessageContenta[0]);
+                            //<span class=\"rf_leet\">Mannix</span>"
+                            string[] RfLeet1 = MessageSendera1[1].Split("</span>");
+                            string[] RfLeet2 = RfLeet1[0].Split("\\\u0022rf_leet\\\u0022>");
+                            status.WriteLine("[#RF] " + RfLeet2[1] + " : " + MessageContenta[0]);
                         }
                         else if (MessageSendera1[1].Contains("rf_i rf_mvp"))
                         {
