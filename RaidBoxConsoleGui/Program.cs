@@ -121,7 +121,7 @@ namespace RaidBoxConsoleGui
                             else if (MessageSendera1[i].Contains("rf_leet"))
                             {
                                 //<span class=\"rf_leet\">Mannix</span>"
-                                string[] RfLeet1 = MessageSendera1[1].Split("</span>");
+                                string[] RfLeet1 = MessageSendera1[i].Split("</span>");
                                 string[] RfLeet2 = RfLeet1[0].Split("\\\u0022rf_leet\\\u0022>");
                                 status.WriteLine("[#RF] " + RfLeet2[1] + " : " + MessageContenta[0]);
                             }
