@@ -1,3 +1,3 @@
-# RaidBox
+# RaidBox V.0.2
 This is a RaidForums.com Shoutbox Console Client,
-its **Far** from Finished but it already can do Basic Communication
+its **Far** from Finished,can it already do Basic Communication
