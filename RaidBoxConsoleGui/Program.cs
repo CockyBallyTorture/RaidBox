@@ -5,6 +5,7 @@ using System.Net.Http;
 using System.Runtime.InteropServices;
 using System.Threading;
 using WebSocket4Net;
+
 using static System.ConsoleColor;
 
 namespace RaidBoxConsoleGui
@@ -12,6 +13,7 @@ namespace RaidBoxConsoleGui
     class Program
     {
         //dotnet publish -r win-x64 -c Release /p:PublishSingleFile=true /p:PublishTrimmed=true /p:IncludeNativeLibrariesForSelfExtract=true
+        //osx.10.12-x64 
         public static string Message;
 
         private static readonly Window window = new(89, 49);
@@ -91,86 +93,127 @@ namespace RaidBoxConsoleGui
                             {
                                 string[] RfPart1 = MessageSendera1[i].Split("</span>");
                                 string[] RfPart2 = RfPart1[0].Split("\\\u0022>");
-                                status.WriteLine("[#RF] " + RfPart2[2] + " : " + MessageContenta[0]);
+                                status.Write(Green, "[");
+                                status.Write("#RF");
+                                status.Write(Green, "] ");
+                                status.WriteLine(RfPart2[2] + " : " + MessageContenta[0]);
                             }
                             else if (MessageSendera1[i].Contains("rf_elite"))
                             {
                                 string[] RfElite1 = MessageSendera1[i].Split("</span>");
                                 string[] RfElite2 = RfElite1[0].Split("\\\u0022rf_elite\\\u0022>");
-                                status.WriteLine("[#RF] " + RfElite2[1] + " : " + MessageContenta[0]);
+                                status.Write(Green, "[");
+                                status.Write("#RF");
+                                status.Write(Green, "] ");
+                                status.WriteLine(RfElite2[1] + " : " + MessageContenta[0]);
                             }
                             else if (MessageSendera1[i].Contains("rf_member"))
                             {
                                 string[] Rfmember1 = MessageSendera1[i].Split("</span>");
                                 string[] Rfmember2 = Rfmember1[0].Split("\\\u0022rf_member\\\u0022>");
-                                status.WriteLine("[#RF] " + Rfmember2[1] + " : " + MessageContenta[0]);
+                                status.Write(Green, "[");
+                                status.Write("#RF");
+                                status.Write(Green, "] ");
+                                status.WriteLine(Rfmember2[1] + " : " + MessageContenta[0]);
                                 //<span class=\"rf_member\">skullandpwnz</span>"
                             }
                             else if (MessageSendera1[i].Contains("rf_godx"))
                             {
                                 string[] Rfgodx1 = MessageSendera1[i].Split("</span>");
                                 string[] Rfgodx2 = Rfgodx1[0].Split("\\\u0022>");
-                                status.WriteLine("[#RF] " + Rfgodx2[2] + " : " + MessageContenta[0]);
+                                status.Write(Green, "[");
+                                status.Write("#RF");
+                                status.Write(Green, "] ");
+                                status.WriteLine(Rfgodx2[2] + " : " + MessageContenta[0]);
                             }
                             else if (MessageSendera1[i].Contains("rf_noob"))
                             {
                                 string[] RfNoob1 = MessageSendera1[i].Split("</span>");
                                 string[] RfNoob2 = RfNoob1[0].Split("\\\u0022rf_noob\\\u0022>");
-                                status.WriteLine("[#RF] " + RfNoob2[1] + " : " + MessageContenta[0]);
+                                status.Write(Green, "[");
+                                status.Write("#RF");
+                                status.Write(Green, "] ");
+                                status.WriteLine(RfNoob2[1] + " : " + MessageContenta[0]);
                             }
                             else if (MessageSendera1[i].Contains("rf_leet"))
                             {
                                 //<span class=\"rf_leet\">Mannix</span>"
                                 string[] RfLeet1 = MessageSendera1[i].Split("</span>");
                                 string[] RfLeet2 = RfLeet1[0].Split("\\\u0022rf_leet\\\u0022>");
-                                status.WriteLine("[#RF] " + RfLeet2[1] + " : " + MessageContenta[0]);
+                                status.Write(Green, "[");
+                                status.Write("#RF");
+                                status.Write(Green, "] ");
+                                status.WriteLine(RfLeet2[1] + " : " + MessageContenta[0]);
                             }
                             else if (MessageSendera1[i].Contains("rf_i rf_mvp"))
                             {
                                 string[] RfMvp1 = MessageSendera1[i].Split("</span>");
                                 string[] RfMvp2 = RfMvp1[0].Split("\\\u0022rf_i rf_mvp\\\u0022>");
-
-                                status.WriteLine("[#RF] " + RfMvp2[1] + " : " + MessageContenta[0]);
+                                status.Write(Green, "[");
+                                status.Write("#RF");
+                                status.Write(Green, "] ");
+                                status.WriteLine(RfMvp2[1] + " : " + MessageContenta[0]);
                             }
                             else if (MessageSendera1[i].Contains("\\\u0022rf_i rf_vip\\\u0022"))
                             {
                                 string[] RfVip1 = MessageSendera1[i].Split("</span>");
                                 string[] RfVip2 = RfVip1[0].Split("\\\u0022rf_i rf_vip\\\u0022>");
-                                status.WriteLine("[#RF] " + RfVip2[1] + " : " + MessageContenta[0]);
+                                status.Write(Green, "[");
+                                status.Write("#RF");
+                                status.Write(Green, "] ");
+                                status.WriteLine(RfVip2[1] + " : " + MessageContenta[0]);
                             }
                             else if (MessageSendera1[i].Contains("\\\u0022rf_owner\\\u0022"))
                             {
                                 string[] RfOwner1 = MessageSendera1[i].Split("<b>");
                                 string[] RfOwner2 = RfOwner1[1].Split("</b>");
-                                status.WriteLine("[#RF] " + RfOwner2[0] + " : " + MessageContenta[0]);
+                                status.Write(Green, "[");
+                                status.Write("#RF");
+                                status.Write(Green, "] ");
+                                status.WriteLine(RfOwner2[0] + " : " + MessageContenta[0]);
                             }
                             else if (MessageSendera1[i].Contains("\\\u0022rf_mod\\\u0022"))
                             {
                                 string[] Rfmod1 = MessageSendera1[i].Split("</span>");
                                 string[] Rfmod2 = Rfmod1[0].Split("\\\u0022rf_mod\\\u0022>");
-                                status.WriteLine("[#RF] " + Rfmod2[1] + " : " + MessageContenta[0]);
+                                status.Write(Green, "[");
+                                status.Write("#RF");
+                                status.Write(Green, "] ");
+                                status.WriteLine(Rfmod2[1] + " : " + MessageContenta[0]);
                             }
                             else if (MessageSendera1[i].Contains("\\\u0022rf_i rf_god\\\u0022"))
                             {
                                 if (MessageSendera1[i].Contains("title=\\\u0022pacino\\\u0022"))
                                 {
-                                    status.WriteLine("[#RF] " + "Pacino" + " : " + MessageContenta[0]);
+                                    status.Write(Green, "[");
+                                    status.Write("#RF");
+                                    status.Write(Green, "] ");
+                                    status.WriteLine("Pacino" + " : " + MessageContenta[0]);
                                 }
                                 else if (MessageSendera1[i].Contains("title=\\\u0022Event Horizon\\\u0022/>"))
                                 {
-                                    status.WriteLine("[#RF] " + "Event Horizon" + " : " + MessageContenta[0]);
+                                    status.Write(Green, "[");
+                                    status.Write("#RF");
+                                    status.Write(Green, "] ");
+                                    status.WriteLine("Event Horizon" + " : " + MessageContenta[0]);
                                 }
                                 else if (MessageSendera1[i].Contains("<b>"))
                                 {
                                     string[] RfBshit1 = MessageSendera1[i].Split("<b>");
                                     string[] RfBshit2 = RfBshit1[1].Split("</b>");
-                                    status.WriteLine("[#RF] " + RfBshit2[0] + " : " + MessageContenta[0]);
+                                    status.Write(Green, "[");
+                                    status.Write("#RF");
+                                    status.Write(Green, "] ");
+                                    status.WriteLine(RfBshit2[0] + " : " + MessageContenta[0]);
                                 }
                                 else if (MessageSendera1[i].Contains("</span>\u0022,\u0022edt"))
                                 {
                                     string[] RfGod1 = MessageSendera1[i].Split("</span>");
                                     string[] RfGod2 = RfGod1[0].Split("\\\u0022>");
-                                    status.WriteLine("[#RF] " + RfGod2[1] + " : " + MessageContenta[0]);
+                                    status.Write(Green, "[");
+                                    status.Write("#RF");
+                                    status.Write(Green, "] ");
+                                    status.WriteLine(RfGod2[1] + " : " + MessageContenta[0]);
                                 }
 
                             }
@@ -203,86 +246,127 @@ namespace RaidBoxConsoleGui
                         {
                             string[] RfPart1 = MessageSendera1[1].Split("</span>");
                             string[] RfPart2 = RfPart1[0].Split("\\\u0022>");
-                            status.WriteLine("[#RF] " + RfPart2[2] + " : " + MessageContenta[0]);
+                            status.Write(Green, "[");
+                            status.Write("#RF");
+                            status.Write(Green, "] ");
+                            status.WriteLine(RfPart2[2] + " : " + MessageContenta[0]);
                         }
                         else if (MessageSendera1[1].Contains("rf_elite"))
                         {
                             string[] RfElite1 = MessageSendera1[1].Split("</span>");
                             string[] RfElite2 = RfElite1[0].Split("\\\u0022rf_elite\\\u0022>");
-                            status.WriteLine("[#RF] " + RfElite2[1] + " : " + MessageContenta[0]);
+                            status.Write(Green, "[");
+                            status.Write("#RF");
+                            status.Write(Green, "] ");
+                            status.WriteLine(RfElite2[1] + " : " + MessageContenta[0]);
                         }
                         else if (MessageSendera1[1].Contains("rf_member"))
                         {
                             string[] Rfmember1 = MessageSendera1[1].Split("</span>");
                             string[] Rfmember2 = Rfmember1[0].Split("\\\u0022rf_member\\\u0022>");
-                            status.WriteLine("[#RF] " + Rfmember2[1] + " : " + MessageContenta[0]);
+                            status.Write(Green, "[");
+                            status.Write("#RF");
+                            status.Write(Green, "] ");
+                            status.WriteLine(Rfmember2[1] + " : " + MessageContenta[0]);
                             //<span class=\"rf_member\">skullandpwnz</span>"
                         }
                         else if (MessageSendera1[1].Contains("rf_godx"))
                         {
                             string[] Rfgodx1 = MessageSendera1[1].Split("</span>");
                             string[] Rfgodx2 = Rfgodx1[0].Split("\\\u0022>");
-                            status.WriteLine("[#RF] " + Rfgodx2[2] + " : " + MessageContenta[0]);
+                            status.Write(Green, "[");
+                            status.Write("#RF");
+                            status.Write(Green, "] ");
+                            status.WriteLine(Rfgodx2[2] + " : " + MessageContenta[0]);
                         }
                         else if (MessageSendera1[1].Contains("rf_noob"))
                         {
                             string[] RfNoob1 = MessageSendera1[1].Split("</span>");
                             string[] RfNoob2 = RfNoob1[0].Split("\\\u0022rf_noob\\\u0022>");
-                            status.WriteLine("[#RF] " + RfNoob2[1] + " : " + MessageContenta[0]);
+                            status.Write(Green, "[");
+                            status.Write("#RF");
+                            status.Write(Green, "] ");
+                            status.WriteLine(RfNoob2[1] + " : " + MessageContenta[0]);
                         }
                         else if (MessageSendera1[1].Contains("rf_leet"))
                         {
                             //<span class=\"rf_leet\">Mannix</span>"
                             string[] RfLeet1 = MessageSendera1[1].Split("</span>");
                             string[] RfLeet2 = RfLeet1[0].Split("\\\u0022rf_leet\\\u0022>");
-                            status.WriteLine("[#RF] " + RfLeet2[1] + " : " + MessageContenta[0]);
+                            status.Write(Green, "[");
+                            status.Write("#RF");
+                            status.Write(Green, "] ");
+                            status.WriteLine(RfLeet2[1] + " : " + MessageContenta[0]);
                         }
                         else if (MessageSendera1[1].Contains("rf_i rf_mvp"))
                         {
                             string[] RfMvp1 = MessageSendera1[1].Split("</span>");
                             string[] RfMvp2 = RfMvp1[0].Split("\\\u0022rf_i rf_mvp\\\u0022>");
-
-                            status.WriteLine("[#RF] " + RfMvp2[1] + " : " + MessageContenta[0]);
+                            status.Write(Green, "[");
+                            status.Write("#RF");
+                            status.Write(Green, "] ");
+                            status.WriteLine(RfMvp2[1] + " : " + MessageContenta[0]);
                         }
                         else if (MessageSendera1[1].Contains("\\\u0022rf_i rf_vip\\\u0022"))
                         {
                             string[] RfVip1 = MessageSendera1[1].Split("</span>");
                             string[] RfVip2 = RfVip1[0].Split("\\\u0022rf_i rf_vip\\\u0022>");
-                            status.WriteLine("[#RF] " + RfVip2[1] + " : " + MessageContenta[0]);
+                            status.Write(Green, "[");
+                            status.Write("#RF");
+                            status.Write(Green, "] ");
+                            status.WriteLine(RfVip2[1] + " : " + MessageContenta[0]);
                         }
                         else if (MessageSendera1[1].Contains("\\\u0022rf_owner\\\u0022"))
                         {
                             string[] RfOwner1 = MessageSendera1[1].Split("<b>");
                             string[] RfOwner2 = RfOwner1[1].Split("</b>");
-                            status.WriteLine("[#RF] " + RfOwner2[0] + " : " + MessageContenta[0]);
+                            status.Write(Green, "[");
+                            status.Write("#RF");
+                            status.Write(Green, "] ");
+                            status.WriteLine(RfOwner2[0] + " : " + MessageContenta[0]);
                         }
                         else if (MessageSendera1[1].Contains("\\\u0022rf_mod\\\u0022"))
                         {
                             string[] Rfmod1 = MessageSendera1[1].Split("</span>");
                             string[] Rfmod2 = Rfmod1[0].Split("\\\u0022rf_mod\\\u0022>");
-                            status.WriteLine("[#RF] " + Rfmod2[1] + " : " + MessageContenta[0]);
+                            status.Write(Green, "[");
+                            status.Write("#RF");
+                            status.Write(Green, "] ");
+                            status.WriteLine(Rfmod2[1] + " : " + MessageContenta[0]);
                         }
                         else if (MessageSendera1[1].Contains("\\\u0022rf_i rf_god\\\u0022"))
                         {
                             if (MessageSendera1[1].Contains("title=\\\u0022pacino\\\u0022"))
                             {
-                                status.WriteLine("[#RF] " + "Pacino" + " : " + MessageContenta[0]);
+                                status.Write(Green, "[");
+                                status.Write("#RF");
+                                status.Write(Green, "] ");
+                                status.WriteLine("Pacino" + " : " + MessageContenta[0]);
                             }
                             else if (MessageSendera1[1].Contains("title=\\\u0022Event Horizon\\\u0022/>"))
                             {
-                                status.WriteLine("[#RF] " + "Event Horizon" + " : " + MessageContenta[0]);
+                                status.Write(Green, "[");
+                                status.Write("#RF");
+                                status.Write(Green, "] ");
+                                status.WriteLine("Event Horizon" + " : " + MessageContenta[0]);
                             }
                             else if (MessageSendera1[1].Contains("<b>"))
                             {
                                 string[] RfBshit1 = MessageSendera1[1].Split("<b>");
                                 string[] RfBshit2 = RfBshit1[1].Split("</b>");
-                                status.WriteLine("[#RF] " + RfBshit2[0] + " : " + MessageContenta[0]);
+                                status.Write(Green, "[");
+                                status.Write("#RF");
+                                status.Write(Green, "] ");
+                                status.WriteLine(RfBshit2[0] + " : " + MessageContenta[0]);
                             }
                             else if (MessageSendera1[1].Contains("</span>\u0022,\u0022edt"))
                             {
                                 string[] RfGod1 = MessageSendera1[1].Split("</span>");
                                 string[] RfGod2 = RfGod1[0].Split("\\\u0022>");
-                                status.WriteLine("[#RF] " + RfGod2[1] + " : " + MessageContenta[0]);
+                                status.Write(Green, "[");
+                                status.Write("#RF");
+                                status.Write(Green, "] ");
+                                status.WriteLine(RfGod2[1] + " : " + MessageContenta[0]);
                             }
 
                         }
@@ -582,9 +666,11 @@ namespace RaidBoxConsoleGui
             {
                 Console.SetWindowSize(90, 50);
                 Console.SetBufferSize(90, 50);
+                
             }
             IConsole Shoutbox = window.OpenBox("RaidForums Shoutbox", 89, 46);
             IConsole PM = window.OpenBox("", 89, 3);
+            
             Shoutbox.WriteLine(Blue, "Made With Love By CBT");
             Shoutbox.WriteLine(Blue, "TODO : make Receiving PMs less Buggy = Improve the Filter make it look into more Details, if some names are Buggy just pm me anywhere youd like, 2. (Somewhere in the Future) Rewrite the Engine to Accept Images,");
             Shoutbox.WriteLine(Yellow, "Create a text file named \u0022token.txt\u0022 in the same Directory as this Application");
