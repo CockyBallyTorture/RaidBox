@@ -5,7 +5,7 @@ using System.Net.Http;
 using System.Runtime.InteropServices;
 using System.Threading;
 using WebSocket4Net;
-
+using static System.Console; //Testing invide.
 using static System.ConsoleColor;
 
 namespace RaidBoxConsoleGui
